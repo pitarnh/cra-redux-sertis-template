@@ -21,7 +21,7 @@ export default styled.div`
 	.textbox {
 		font-size: 32px;
 		padding: 2px;
-		width: 64px;
+		width: 30px;
 		text-align: center;
 		margin-right: 8px;
 	}

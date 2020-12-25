@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Button } from 'cent-comp'
+import { Button, Input } from 'cent-comp'
 import {
   decrement,
   increment,
@@ -20,29 +20,34 @@ export function Counter() {
 		<CounterStyled>
       <div className='row'>
         <Button
-           type="primary"
+           type="flat"
           onClick={() => dispatch(increment())}
         >
           +
         </Button>
         <span className='value'>{count}</span>
         <Button
-          type="primary"
+          type="flat"
           onClick={() => dispatch(decrement())}
         >
           -
         </Button>
       </div>
       <div className='row'>
-        <input
-          className='textbox'
+        <Input
+          customStyle={{
+            fontSize: '32px',
+		        padding: '2px',
+		        width: '30px',
+		        textAlign: 'center',
+		        marginRight: '8px'
+          }}
           aria-label="Set increment amount"
           value={incrementAmount}
           onChange={e => setIncrementAmount(e.target.value)}
         />
         <Button
           onClick={() =>dispatch(incrementByAmount(Number(incrementAmount) || 0))}
-          className="add-amt-btn"
         >
           Add Amount
         </Button>
